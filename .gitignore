@@ -5,6 +5,5 @@ node_modules/
 /playwright/.cache/
 cucumber-report.html
 assets
-features
 @rerun.txt
 index.html
