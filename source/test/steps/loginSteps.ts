@@ -8,28 +8,28 @@ import * as data from "../../helper/util/test-data/login.json"
 setDefaultTimeout(60 * 1000 * 2);
 
 Given('User navigates to the application', async function () {
-    const loginPage = new LoginPage(pageFixture.page);
-    await loginPage.navigateToLoginPage();
+    await new LoginPage(pageFixture.page).navigateToLoginPage();
     pageFixture.logger.info("User navigates to the application to Ahasoft Login Page");
 });
 
 Given('User enter the username from test data', async function () {
-    const loginPage = new LoginPage(pageFixture.page);
-    await loginPage.enterUserName(data.username);
+    await new LoginPage(pageFixture.page).enterUserName(data.username);
+    pageFixture.logger.info("User enter the username from test data -> vpsalonkr1");
 });
 
-Given('User enter the password from test data', async function () {
-    const loginPage = new LoginPage(pageFixture.page);
-    await loginPage.enterPassword(data.password);
+Given('User enter the username from test data', async function () {
+    await  new LoginPage(pageFixture.page).enterPassword(data.password);
+    pageFixture.logger.info("User enter the username from test data -> abcd@1234");
 });
 
 When('User click on the login button', async function () {
-    const loginPage = new LoginPage(pageFixture.page);
-    await loginPage.clickLoginButton();
+    await new LoginPage(pageFixture.page).clickLoginButton();
+    pageFixture.logger.info("User click on the login button");
 });
 
 Then('Login should be success', async function () {
     const text = await pageFixture.page.getByRole('button', { name: 'vpsalon1kr' }).textContent();
     const assert = new Assert(pageFixture.page);
     assert.assertTextContains(text);
+    pageFixture.logger.alert("Login should be success");
 });
