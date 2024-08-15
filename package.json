@@ -24,6 +24,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "open": "^10.1.0",
     "winston": "^3.13.0"
   }
 }

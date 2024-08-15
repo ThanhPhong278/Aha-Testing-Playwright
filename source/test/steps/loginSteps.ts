@@ -14,12 +14,12 @@ Given('User navigates to the application', async function () {
 
 Given('User enter the username from test data', async function () {
     await new LoginPage(pageFixture.page).enterUserName(data.username);
-    pageFixture.logger.info("User enter the username from test data -> vpsalonkr1");
+    pageFixture.logger.info("User enters the username");
 });
 
-Given('User enter the username from test data', async function () {
+Given('User enter the password from test data', async function () {
     await  new LoginPage(pageFixture.page).enterPassword(data.password);
-    pageFixture.logger.info("User enter the username from test data -> abcd@1234");
+    pageFixture.logger.info("User enters the password");
 });
 
 When('User click on the login button', async function () {
@@ -31,5 +31,6 @@ Then('Login should be success', async function () {
     const text = await pageFixture.page.getByRole('button', { name: 'vpsalon1kr' }).textContent();
     const assert = new Assert(pageFixture.page);
     assert.assertTextContains(text);
-    pageFixture.logger.alert("Login should be success");
+    pageFixture.logger.info("Login should be success");
 });
+
