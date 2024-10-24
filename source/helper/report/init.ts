@@ -13,7 +13,7 @@ import * as path from 'path';
 const sourceDir = "test-results";
 const backupDir = "backup-folder";
 
-async function backupAndClearDir(sourceDir, backupDir) {
+async function backupAndClearDir(sourceDir: string, backupDir: string) {
     try {
         await fs.ensureDir(backupDir);
         await fs.ensureDir(sourceDir);
@@ -26,7 +26,7 @@ async function backupAndClearDir(sourceDir, backupDir) {
         await fs.emptyDir(sourceDir);
         console.log("Backup and clear completed successfully.");
     } catch (error) {
-        console.log("Folder not created! " + error);
+        console.log("Error during backup and clear! " + error);
     }
 }
 backupAndClearDir(sourceDir, backupDir);
