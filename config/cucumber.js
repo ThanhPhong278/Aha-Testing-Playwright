@@ -25,6 +25,7 @@ module.exports = {
         },
     
         rerun: {
+            tags: process.env.npm_config_TAG || "",
             formatOptions: {
                 snippetInterface: "async-await"
             },

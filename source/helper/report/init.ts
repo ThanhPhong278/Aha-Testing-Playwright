@@ -17,7 +17,6 @@ async function backupAndClearDir(sourceDir: string, backupDir: string) {
     try {
         await fs.ensureDir(backupDir);
         await fs.ensureDir(sourceDir);
-        await fs.emptyDir(sourceDir);
         const items = await fs.readdir(sourceDir);
         for (const item of items) {
             const srcPath = path.join(sourceDir, item);
